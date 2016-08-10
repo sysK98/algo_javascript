@@ -1,0 +1,70 @@
+<!DOCTYPE Html>
+
+<html>
+<body>
+<head>
+</head>
+
+<script>
+
+	function Stack(){
+		this.dataStore = [];
+		this.top = 0;
+		this.push = push;
+		this.pop = pop;
+		this.peek = peek;
+		this.length = length;
+		this.clear = clear;
+		
+	}
+
+	function push(element){
+		this.dataStore[this.top++] = element;
+	}
+	
+	function pop(){
+		return this.dataStore[--this.top];
+	}
+	
+	function peek(){
+		return this.dataStore[this.top-1];
+	}
+	
+	function length(){
+		return this.top;
+	}
+	
+	function clear(){
+		this.top = 0;
+	}
+	
+	
+	function myFunction(){
+	
+		var s = new Stack();
+		
+		s.push("David");
+		s.push("Raymond");
+		s.push("Bryan");
+		
+		document.getElementById("demo1").innerHTML = "length : " + s.length();
+		document.getElementById("demo2").innerHTML = s.peek();
+		
+		var popped = s.pop();
+		document.getElementById("demo3").innerHTML = "the popped element is  : " + popped;
+	}
+	
+	</script>
+
+	<p> Stack </p>
+	
+	<button onClick="myFunction()"> Go </button>
+	<p id="demo1"> </p>
+	<p id="demo2"> </p>
+	<p id="demo3"> </p>
+	
+	
+	
+</body>
+</html>
+
